@@ -2,6 +2,7 @@
 
 
 
+
 <!doctype html>
 <html lang="en-US">
 <head><meta charset="utf-8">
@@ -360,6 +361,82 @@
 <script type="text/javascript" src="https://static.almabaseapp.com/js/jquery-latest.min.a9a0cc296e96.js"></script>
 <script src="https://payments.blackbaud.com/Checkout/bbCheckout.2.0.js"></script>
 <script src="https://static.almabaseapp.com/js/almapay/almapay.a03d4fc1e2f4.js"></script>
+<script>
+  (function () {
+    var CTA_TEXT = 'Purchase One Brick';
+    var PAYPAL_CONTAINER_ID = 'paypal-container-USVMMDYFZY5TE';
+    var PAYPAL_HOSTED_BUTTON_ID = 'USVMMDYFZY5TE';
+    var PAYPAL_SDK_ID = 'custom-paypal-sdk';
+
+    function renderPayPalButton() {
+      var container = document.getElementById(PAYPAL_CONTAINER_ID);
+      if (!container) {
+        return;
+      }
+      if (window.paypal && window.paypal.HostedButtons) {
+        window.paypal.HostedButtons({
+          hostedButtonId: PAYPAL_HOSTED_BUTTON_ID,
+        }).render('#' + PAYPAL_CONTAINER_ID);
+      } else {
+        setTimeout(renderPayPalButton, 200);
+      }
+    }
+
+    function loadPayPalSdk() {
+      if (document.getElementById(PAYPAL_SDK_ID)) {
+        renderPayPalButton();
+        return;
+      }
+      var script = document.createElement('script');
+      script.id = PAYPAL_SDK_ID;
+      script.src =
+        'https://www.paypal.com/sdk/js?client-id=BAAFUfxeXM_0a03EIADDGTG5Hj6QXA9HulGjICkekdWMaicvcHuKfdyy-KNJBYqgy2VnsHzOZZrPBlL7CE&components=hosted-buttons&enable-funding=venmo&currency=USD';
+      script.async = true;
+      script.onload = renderPayPalButton;
+      document.head.appendChild(script);
+    }
+
+    function replaceCtaButton() {
+      var elements = Array.from(
+        document.querySelectorAll('button, input[type="button"], input[type="submit"], [role="button"]')
+      );
+      var target = elements.find(function (el) {
+        return (
+          el.textContent &&
+          el.textContent.trim().toLowerCase().includes(CTA_TEXT.toLowerCase())
+        );
+      });
+      if (!target) {
+        return false;
+      }
+      var container = document.createElement('div');
+      container.id = PAYPAL_CONTAINER_ID;
+      container.className = target.className || '';
+      container.style.cssText = target.getAttribute('style') || '';
+      target.parentNode.replaceChild(container, target);
+      loadPayPalSdk();
+      return true;
+    }
+
+    function observeForCta() {
+      if (replaceCtaButton()) {
+        return;
+      }
+      var observer = new MutationObserver(function () {
+        if (replaceCtaButton()) {
+          observer.disconnect();
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      observeForCta();
+    } else {
+      document.addEventListener('DOMContentLoaded', observeForCta);
+    }
+  })();
+</script>
 <script src="https://www.google.com/recaptcha/api.js?render=6LfNkzslAAAAACi66xb88GLGU1N4FyVC-VU5jeTH"></script>
 </body>
 </html>
