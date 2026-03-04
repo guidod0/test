@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Sign In with Auth0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://uploads-ssl.webflow.com/5b928a5439bbd3a36c44e301/5b928bf31d82182393102e60_ab_favicon.15aff1059efb.png"
+        rel="shortcut icon" type="image/x-icon" />
+    <style>
+        .auth0-lock-header-logo {
+            max-width: 80%;
+            max-height: 100px;
+            width: auto !important;
+            height: auto !important;
+            padding: 10px;
+        }
+
+        .powered-by-box {
+            padding: 15px;
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            color: rgb(170, 170, 170);
+            z-index: 1200000 !important;
+            font-family: "avenir";
+            font-size: 15px;
+        }
+
+        .logo-image {
+            height: 16px;
+            margin-left: 5px;
+            transform: translate(0px, 2px);
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if IE 8]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ie8/0.2.5/ie8.js"></script>
+<![endif]-->
+
+    <!--[if lte IE 9]>
+<script src="https://cdn.auth0.com/js/base64.js"></script>
+<script src="https://cdn.auth0.com/js/es5-shim.min.js"></script>
+<![endif]-->
+
+    <!-- Latest patch release (recommended for production) -->
+    <script src="https://cdn.auth0.com/js/lock/12.3.0/lock.min.js"></script>
+
+    <script>
+        // Decode utf8 characters properly
+        var config = JSON.parse(decodeURIComponent(escape(window.atob('eyJpY29uIjoiaHR0cHM6Ly91cGxvYWRzLXNzbC53ZWJmbG93LmNvbS81YjkyOGE1NDM5YmJkM2EzNmM0NGUzMDEvNWJhZmU1NDdjMTEwZTQ0ZjQ4N2Y2YTNhX2ltYWdlX3ByZXZpZXcucG5nIiwiYXNzZXRzVXJsIjoiIiwiYXV0aDBEb21haW4iOiJ2ZXJpZnkuYWxtYWJhc2VhcHAuY29tIiwiYXV0aDBUZW5hbnQiOiJhbG1hYmFzZSIsImNsaWVudENvbmZpZ3VyYXRpb25CYXNlVXJsIjoiaHR0cHM6Ly92ZXJpZnkuYWxtYWJhc2VhcHAuY29tLyIsImNhbGxiYWNrT25Mb2NhdGlvbkhhc2giOmZhbHNlLCJjYWxsYmFja1VSTCI6Imh0dHBzOi8vd3d3Lm1pYW1pYmVhY2hoaWdoYWx1bW5pLmNvbS9jb21wbGV0ZS9hdXRoMC8/cmVkaXJlY3Rfc3RhdGU9a2RrY0xZdDZ5czNEQlh3R2tWUjMzTlJHR1R6bXduRmQiLCJjZG4iOiJodHRwczovL2Nkbi5hdXRoMC5jb20vIiwiY2xpZW50SUQiOiJtS2JKU0dyRDBCRnNOWkhkQkp0eGM5RjM2WVNWRkx1MCIsImRpY3QiOnsic2lnbmluIjp7InRpdGxlIjoiTWlhbWkgQmVhY2ggU2VuaW9yIEhpZ2ggU2Nob29sIEFsdW1uaSBBc3NvY2lhdGlvbiJ9fSwiZXh0cmFQYXJhbXMiOnsicHJvdG9jb2wiOiJvYXV0aDIiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicHJpbWFyeUNvbG9yIjoiIzAwMDAwMCIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIiwibG9nbyI6Imh0dHBzOi8vbWVkaWEuYWxtYWJhc2VhcHAuY29tLzg2Ny9tZXRhL2FsdW1uaV9sb2dvLmpwZWciLCJfY3NyZiI6InJDaXZPTmU1LTJVYzU0X2gwaE1pelBNSXpGX292Ry0za0YwRSIsIl9pbnRzdGF0ZSI6ImRlcHJlY2F0ZWQiLCJzdGF0ZSI6ImhLRm8yU0JhZFVrMU1raHRRVVF0UzBKRFJubEJZM0YzZWtKTFJFbEhiSFkzU2twaFU2RnVwV3h2WjJsdW8zUnBaTmtnWlU5UFFYRjRiVzl2VVZwbFdUSXdRVTVCTm14c1dHZGZOemRGUmtkMFpGYWpZMmxrMlNCdFMySktVMGR5UkRCQ1JuTk9Xa2hrUWtwMGVHTTVSak0yV1ZOV1JreDFNQSJ9LCJpbnRlcm5hbE9wdGlvbnMiOnsicHJvdG9jb2wiOiJvYXV0aDIiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicHJpbWFyeUNvbG9yIjoiIzAwMDAwMCIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIiwibG9nbyI6Imh0dHBzOi8vbWVkaWEuYWxtYWJhc2VhcHAuY29tLzg2Ny9tZXRhL2FsdW1uaV9sb2dvLmpwZWciLCJfY3NyZiI6InJDaXZPTmU1LTJVYzU0X2gwaE1pelBNSXpGX292Ry0za0YwRSIsIl9pbnRzdGF0ZSI6ImRlcHJlY2F0ZWQiLCJzdGF0ZSI6ImhLRm8yU0JhZFVrMU1raHRRVVF0UzBKRFJubEJZM0YzZWtKTFJFbEhiSFkzU2twaFU2RnVwV3h2WjJsdW8zUnBaTmtnWlU5UFFYRjRiVzl2VVZwbFdUSXdRVTVCTm14c1dHZGZOemRGUmtkMFpGYWpZMmxrMlNCdFMySktVMGR5UkRCQ1JuTk9Xa2hrUWtwMGVHTTVSak0yV1ZOV1JreDFNQSJ9LCJ3aWRnZXRVcmwiOiJodHRwczovL2Nkbi5hdXRoMC5jb20vdzIvYXV0aDAtd2lkZ2V0LTUuMi5taW4uanMiLCJpc1RoaXJkUGFydHlDbGllbnQiOmZhbHNlLCJhdXRob3JpemF0aW9uU2VydmVyIjp7InVybCI6Imh0dHBzOi8vdmVyaWZ5LmFsbWFiYXNlYXBwLmNvbSIsImlzc3VlciI6Imh0dHBzOi8vdmVyaWZ5LmFsbWFiYXNlYXBwLmNvbS8ifSwiY29sb3JzIjp7InBhZ2VfYmFja2dyb3VuZCI6IiMwMDAwMDAiLCJwcmltYXJ5IjoiIzAwNTlkNiJ9fQ=='))));
+        config.extraParams = config.extraParams || {};
+        var connection = config.connection;
+        var prompt = config.prompt;
+        var languageDictionary;
+        var language;
+
+        if (config.dict && config.dict.signin && config.dict.signin.title) {
+            languageDictionary = { title: config.dict.signin.title };
+        } else if (typeof config.dict === 'string') {
+            language = config.dict;
+        }
+        languageDictionary.passwordlessEmailCodeInstructions = 'An email with the code has been sent to (Please check the spam folder as well)';
+        languageDictionary.signUpWithLabel = 'Continue with %s';
+
+        var loginHint = config.extraParams.login_hint;
+
+        const ssoClients = [
+            "XCt7roGisIRW6YNZZ9N0lB0QNKjwnjE1",
+            "IaOr7HFw8PJbY0a30LN4Tlmo22T4YwiY",
+            "Jk4v8UVFXlssqqU3bgHs1Ws43f1RFdQn",
+            "zboh6bAjaQkGFnrprRfqK5r3t2DYJ0FQ",
+            "i2228T1QzSeGOdfAsqtWOWWDZXmXpMZ5", // AgnesIrwin School
+            "15IRy4LVfIRuT3QZNaubCpKVHvyqNBWt",
+            "lrxACVRSulK84ddNy57XkPwCyi0i4Zlg",
+            "e5XjYkrb03vwFN8yhfv5Z1xdnWn25pIg", //prodot-almabase-beta.com
+						"Jk4v8UVFXlssqqU3bgHs1Ws43f1RFdQn", //Almanac Test site
+          	"wQE9ir7nViYjAhG8oDxsJ9xpe8t7nq8O", //Elon University
+          	"7O6gzq1CyBkx7XXWULtRFXmWD1nKjeRj", //UniversityCollegeCork
+          	"SKJ81zAjQwT8jJ4s0T1UANSb3vj7LsLR",  //MercyUniversity
+          	"UBCxnA9PKFaDmTw4El8viMIBiNAeAoP1"   //TexasWomansUniversityFoundation
+        ];
+
+        const lockClass = ssoClients.includes(config.clientID) ? Auth0Lock : Auth0LockPasswordless;
+
+        var lock = new lockClass(config.clientID, config.auth0Domain, {
+            avatar: null,
+            auth: {
+                sso: true,
+                redirectUrl: config.callbackURL,
+                responseType: (config.internalOptions || {}).response_type ||
+                    (config.callbackOnLocationHash ? 'token' : 'code'),
+                params: config.internalOptions
+            },
+            configurationBaseUrl: config.clientConfigurationBaseUrl,
+            overrides: {
+                __tenant: config.auth0Tenant,
+                __token_issuer: config.authorizationServer.issuer
+            },
+            assetsUrl: config.assetsUrl,
+            allowedConnections: connection ? [connection] : null,
+            rememberLastLogin: !prompt,
+            language: language,
+            languageDictionary: languageDictionary,
+            theme: {
+                logo: config.extraParams.logo,
+                primaryColor: config.extraParams.primaryColor
+            },
+            closable: false
+        });
+
+        lock.show();
+    </script>
+    <div class="powered-by-box">Powered by <img class="logo-image"
+            src="https://cdn.auth0.com/website/bob/press/logo-light.png" alt="auth0-logo" /></div>
+</body>
+
+</html>

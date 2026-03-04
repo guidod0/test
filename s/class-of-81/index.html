@@ -1,0 +1,320 @@
+
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head><meta charset="utf-8">
+    <title>
+         Feed 
+    </title>
+
+    <style>
+        :root {
+            --theme-primary: #000000;
+            --theme-primary-light: #0000001A;
+        }
+    </style>
+
+    
+        <link rel="shortcut icon" href="https://media.almabaseapp.com/867/meta/icon16x16.ico"/>
+        <link rel="apple-touch-icon" sizes="128x128" href="https://static.almabaseapp.com/img/spaces/default_icon.bea546dcc943.png">
+    
+
+    
+        <meta name="theme-color" content="#000000">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+
+    <link rel="dns-prefetch" href="https://cdn.ravenjs.com">
+<link rel="dns-prefetch" href="https://static.almabaseapp.com">
+<link rel="dns-prefetch" href="https://media.almabaseapp.com">
+<link rel="dns-prefetch" href="https://ab-prod-media-assets-canadacentral.s3.amazonaws.com">
+<link rel="dns-prefetch" href="https://ab-prod-media-assets-london.s3.amazonaws.com">
+<link rel="dns-prefetch" href="https://s3.amazonaws.com">
+<link rel="dns-prefetch" href="https://use.typekit.net">
+<link rel="dns-prefetch" href="https://payments.blackbaud.com">
+<link rel="dns-prefetch" href="https://unpkg.com">
+<link rel="dns-prefetch" href="https://payments.blackbaud.com">
+<link rel="dns-prefetch" href="https://www.paypal.com">
+
+<link rel="preconnect" href="https://static.almabaseapp.com" crossorigin>
+<link rel="preconnect" href="https://media.almabaseapp.com" crossorigin>
+<link rel="preconnect" href="https://ab-prod-media-assets-canadacentral.s3.amazonaws.com" crossorigin>
+<link rel="preconnect" href="https://ab-prod-media-assets-london.s3.amazonaws.com" crossorigin>
+<link rel="preconnect" href="https://s3.amazonaws.com" crossorigin>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="preconnect" href="https://payments.blackbaud.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="preconnect" href="https://payments.blackbaud.com">
+<link rel="preconnect" href="https://www.paypal.com">
+    
+    <script type="text/javascript">
+        var sentryUser = {
+            id: 'Anonymous',
+            email: '',
+            site_id: '867',
+            domain: window.location.origin,
+        };
+        var siteId = '867';
+        var userMode = 'Anonymous';
+        var browser = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)';
+        var environment = 'prod';
+    </script>
+
+
+    
+
+<!-- Google Analytics bugfix with GA being asynchronous refer: https://www.simoahava.com/analytics/ga-snippet-and-ga-gtm-tag-on-the-same-page/#4 -->
+<script>
+    window['GoogleAnalyticsObject'] = 'ga';
+    window['ga'] = window['ga'] || function () {
+        (window['ga'].q = window['ga'].q || []).push(arguments)
+    };
+</script>
+
+    
+        
+            
+                <!-- dataLayer snippet -->
+                <script>
+                    dataLayer = window.dataLayer || [];
+                    var provUserId = null;
+                    var provUserRole = null;
+                    var provUserIsAdmin = 'No';
+                    var provIsAuthenticated = "No";
+                    
+
+                    dataLayer.push({
+                        'prov_status': true,
+                        'prov_customername': 'Miami Beach Senior High School Alumni Association',
+                        'prov_ga_site_tracking_id': 'UA-234402018-6',
+                        'prov_customer_country': 'USA',
+                        'prov_customer_plan_purchased': 'Pro',
+                        'prov_user_ID': provUserId,
+                        'prov_user_is_admin': provUserIsAdmin,
+                        'prov_user_role': provUserRole,
+                        'prov_user_authenticated': provIsAuthenticated
+                    });
+                </script>
+
+                <!-- Google Tag Manager -->
+                <script>(function (w, d, s, l, i) {
+                    w[l] = w[l] || [];
+                    w[l].push({
+                        'gtm.start':
+                            new Date().getTime(), event: 'gtm.js'
+                    });
+                    var f = d.getElementsByTagName(s)[0],
+                        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                    j.async = true;
+                    j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                    f.parentNode.insertBefore(j, f);
+                })(window, document, 'script', 'dataLayer', 'GTM-KK66P4Z');</script>
+            
+            
+            <!-- End Google Tag Manager -->
+        
+    
+
+
+    <script>window.userpilotSettings = {token: "NX-05de1121"};</script>
+<script src="https://js.userpilot.io/sdk/latest.js"></script>
+
+    <script>
+      userpilot.identify( "None", // Used to identify users
+        {
+             name: "", // Full name
+             email: "", // Email address
+             created_at: '', // ISO8601 Date
+             company: {
+                  id: "867", // Required, used to identify the company
+                  name: "miamibeachseniorhigh",
+             },
+            url: window.location.href
+        }
+      );
+    </script>
+
+
+    <script>
+  window.addEventListener("load", () => {
+
+      var div1 = document.querySelector("#new_navigation_canny_widget");
+      var position = 'top'
+      var align = 'left'
+      if (div1) {
+          div1.setAttribute("data-canny-changelog", "")
+      } else {
+          div1 = document.querySelector("#root > div > div.admin-header > div > div.admin-header-menu");
+          var aTag = document.createElement("a");
+          aTag.innerText =  "What's New?  ";
+          aTag.setAttribute("class", "beetle-p admin-header-link");
+          aTag.setAttribute("style", "margin-right: 2rem; white-space:pre-wrap;");
+          aTag.setAttribute("data-canny-changelog", "")
+          div1?.prepend(aTag);
+          position = 'bottom'
+          align = 'right'
+      }
+      !function(w,d,i,s){function l(){if(!d.getElementById(i)){var f=d.getElementsByTagName(s)[0],e=d.createElement(s);e.type="text/javascript",e.async=!0,e.src="https://canny.io/sdk.js",f.parentNode.insertBefore(e,f)}}if("function"!=typeof w.Canny){var c=function(){c.q.push(arguments)};c.q=[],w.Canny=c,"complete"===d.readyState?l():w.attachEvent?w.attachEvent("onload",l):w.addEventListener("load",l,!1)}}(window,document,"canny-jssdk","script");
+      Canny('identify', {
+          appID: '63907d4a90a31e5694d5b508',
+          user: {
+              email: "",
+              name: "",
+              id: "None",
+              companies: [{
+              id: "867",
+              name: "Miami Beach Senior High School ",
+              customFields: {
+                  domain: "www.miamibeachhighalumni.com",
+              }
+              }],
+          },
+          });
+          Canny('initChangelog', {
+              appID: '63907d4a90a31e5694d5b508',
+              position: position,
+              align: align,
+          });
+      });
+</script>
+
+
+    <link rel="stylesheet" href="https://use.typekit.net/eyl8yyl.css">
+
+    
+    <link rel="stylesheet" type="text/css" href="https://static.almabaseapp.com/assets/dist/themex/vendor_app_new.9a317db99b40.css"/>
+    <link rel="stylesheet" type="text/css" href="https://static.almabaseapp.com/assets/dist/themex/spaces.984ff42792e8.css"/>
+
+</head>
+
+<body>
+
+    <div id="root">
+        
+
+
+<style>
+    .fullpage-three-dotes-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background: transparent;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .fullpage-three-dotes-loader .loading-wrapper {
+        text-align: center;
+    }
+    .fullpage-three-dotes-loader .verification-label {
+        margin-top: 16px;
+    }
+    .fullpage-three-dotes-loader .verification-icon {
+        font-size: 32px;
+    }
+    .fullpage-three-dotes-loader .three-dot-loader .square-dot {
+        width: 8px;
+        height: 8px;
+        background: #f3f3f3;
+        display: inline-block;
+        margin-right: 2px;
+    }
+
+    .fullpage-three-dotes-loader .loading-wrapper .three-dot-loader .dot1 {
+        animation: backgroundColor 1.4s linear;
+        animation-iteration-count: infinite;
+    }
+    .fullpage-three-dotes-loader .loading-wrapper .three-dot-loader .dot2 {
+        animation: backgroundColor 1.4s linear;
+        animation-iteration-count: infinite;
+        animation-delay: 0.4s;
+    }
+    .fullpage-three-dotes-loader .loading-wrapper .three-dot-loader .dot3 {
+        animation: backgroundColor 1.4s linear;
+        animation-iteration-count: infinite;
+        animation-delay: 0.8s;
+    }
+
+    @keyframes backgroundColor {
+        0% {
+            background-color: #f3f3f3;
+        }
+
+        50% {
+            background-color: #000000;
+        }
+
+        100% {
+            background-color: #f3f3f3;
+        }
+    }
+</style>
+
+<div class="fullpage-three-dotes-loader">
+    <div class="loading-wrapper">
+        <div class="three-dot-loader">
+            <div class="square-dot dot1"></div>
+            <div class="square-dot dot2"></div>
+            <div class="square-dot dot3"></div>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+
+<script>
+    var csrfToken = 'mXC1ny8CVZBf4GF0pLTHfGmSOqhstBHN';
+    var primaryColor = '#000000';
+    var staticPath = 'https://static.almabaseapp.com/';
+    var siteKey = 'miamibeachseniorhigh';
+    var siteUrl = 'https://' + 'www.miamibeachhighalumni.com';
+    var customerLogo = 'https://media.almabaseapp.com/867/meta/alumni_logo.jpeg';
+    var collegeName = "Miami Beach Senior High School ";
+    var auth0TenantDomain = 'verify.almabaseapp.com';
+    var auth0ClientId = 'mKbJSGrD0BFsNZHdBJtxc9F36YSVFLu0';
+    var userData = JSON.parse('\u0022\u0022');
+    var siteTimezone = 'US/Eastern';
+    var collegeEmail = 'MBSHSAlumni@gmail.com';
+    var froalaEditorKey = '4NC5fA4A3E3A2B2B5D5D-13TMIBDIa2NTMNZFFPFZe2a1Id1f1I1fA8D6C4C4G3H3B1A18A15B6==';
+    var isSiteAdmin = 'false';
+    var privacyPolicyPageUrl = '';
+    var termsOfUsePageUrl = '';
+    var i18nMetadata = JSON.parse('{}');
+    var homePageURL = '';
+    var showNewNavbar = true;
+    var navigationMenu = JSON.parse('\u0022\u0022');
+    var userProfilePic = 'https://static.almabaseapp.com/img/default_profile.53d249956bc4.png';
+    var userDetails = JSON.parse('\u0022\u0022');
+</script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"
+      type="text/css"/>
+<link rel="stylesheet/less" type="text/css" href="https://static.almabaseapp.com/less/colors.eb61e4d22095.less"/>
+<script type="text/javascript" src="https://static.almabaseapp.com/js/less.min.a73a5ca59b3a.js"></script>
+<script type="text/javascript">
+    window.less.modifyVars({ '@primary-color': primaryColor, '@outline-color': primaryColor });
+</script>
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqo_-nZjel6HdC5VLCZtJwSBDi5pplp0Y&libraries=places"></script>
+
+
+
+    <script>
+        var isUserAuthenticated = false;
+        var auth0TenantDomain = 'verify.almabaseapp.com';
+        var auth0ClientId = 'mKbJSGrD0BFsNZHdBJtxc9F36YSVFLu0';
+    </script>
+    <script type="text/javascript" src="https://static.almabaseapp.com/assets/dist/themex/vendor_app_new.6b310611d8a2.js"></script>
+    <script type="text/javascript" src="https://static.almabaseapp.com/assets/dist/themex/spaces.3f5840300a0a.js"></script>
+
+
+</body>
+</html>
