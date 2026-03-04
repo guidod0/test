@@ -213,6 +213,19 @@
             color: #000000;
         }
 
+        .brick-purchase-heading {
+            color: #ffffff;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 0 0 1rem;
+        }
+
+        .brick-purchase-wrapper {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
         .donate-btn, .admin-link-btn {
             background: var(--theme-primary) !important;
         }
@@ -416,11 +429,18 @@
       if (!target) {
         return false;
       }
+      var wrapper = document.createElement('div');
+      wrapper.className = 'brick-purchase-wrapper';
+      var heading = document.createElement('div');
+      heading.className = 'brick-purchase-heading';
+      heading.textContent = 'Bricks Purchase Form';
       var container = document.createElement('div');
       container.id = PAYPAL_CONTAINER_ID;
       container.className = target.className || '';
       container.style.cssText = target.getAttribute('style') || '';
-      target.parentNode.replaceChild(container, target);
+      wrapper.appendChild(heading);
+      wrapper.appendChild(container);
+      target.parentNode.replaceChild(wrapper, target);
       loadPayPalSdk();
       return true;
     }
